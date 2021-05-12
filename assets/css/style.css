@@ -728,6 +728,9 @@ body {
 	.selects input {
 		width: 280px;
 	}
+	.resultado {
+		height: 180px;
+	}
 	.div-menor {
 		height: 180px;
 	}
@@ -755,8 +758,112 @@ body {
 	.div-info {
 		width: 878px;
 	}
+}
 
+/* ### Mobile: 1024px ### */
+@media screen and (max-width: 768px) and (min-width: 760px){
 
-
+	.topo-escuro {
+		padding-right: 30px;
+		padding-left: 30px;
+		padding-top: 30px;
+		padding-bottom: 90px;
+	}
+	.imagem {
+		height: 300px;
+	}
+	.imagem iframe {
+		height: 300px;
+	}
+	.texto {
+		width: 47%;
+	}
+	.botao-registrar {
+		width: 323px;
+	}
+	.texto-principal {
+		margin-top: 90px;
+	}
+	.corpo {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+	.descricao {
+		margin-top: 55px;
+	}
+	.formulario-de-pesquisa input {
+		width: 666px;
+	}
+	.selects input {
+		width: 212px;
+	}
+	.selects select {
+		width: 212px;
+	}
+	.div-maior {
+		height: 150px;
+	}
+	.div-menor {
+		height: 150px;
+	}
+	.div-menor img {
+		height: 150px;
+	}
+	.resultado {
+		height: 150px;
+	}
+	.ler-mais {
+		width: 110px;
+		height: 45px;
+		font-size: 16px;
+	}
+	.rodape {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.modal-registro {
+		width: 710px;
+		margin-top: 35px;
+	}
+	.modal-registro input {
+		width: 600px;
+	}
+	.selects-registro {
+		width: 641px;
+	}
+	.selects-registro select {
+		width: 312px;
+	}
+	.modal-registro label {
+		width: 600px;
+	}
+	.modal-registro button {
+		width: 641px;
+	}
+	.verifica-email {
+		width: 641px;
+	}
+	.modal-empresa {
+		width: 710px;
+		margin-top: 35px;
+	}
+	.foto-empresa {
+		width: 710px;
+	}
+	.div-info {
+		width: 671px;
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
