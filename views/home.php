@@ -22,12 +22,6 @@
 	<meta property="twitter:description" content="Nós somos uma opção para divulgação de empresas gratuitamente. Procure um negócio ou cadastre a sua empresa.">
 	<meta property="twitter:image" content="<?php echo BASE_URL; ?>assets/imgs/Localiza aí - Logotipo.png">
 
-	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-	<!-- Javascript -->
-	<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/script.js"></script>
-
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/style.css">
 
@@ -578,6 +572,12 @@
 			</div>
 		</a>
 	</div>
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Javascript -->
+	<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/script.js"></script>
 
 	<!-- Valida formulário de pesquisa -->
 	<script type="text/javascript">
