@@ -1507,6 +1507,169 @@ body {
 
 }
 
+/* ### Mobile: 320px ### */
+@media screen and (max-width: 320px) and (min-width: 315px){
+
+	.topo-escuro {
+		padding-right: 20px;
+		padding-left: 20px;
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+	.topo-menu {
+		padding-bottom: 13px;
+		flex-direction: column;
+	}
+	.logotipo {
+		width: 170px;
+		height: 69px;
+	}
+	.logotipo img {
+		width: 170px;
+		height: 52px;
+	}
+	.texto-principal {
+		margin-top: 80px;
+		flex-direction: column-reverse;
+	}
+	.texto {
+		width: 100%;
+		margin-top: 40px;
+	}
+	.imagem {
+		width: 100%;
+	}
+	.botao-registrar {
+		width: 277px;
+	}
+	.corpo {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	.descricao {
+		margin-top: 55px;
+		text-align: center;
+	}
+	.formulario-de-pesquisa {
+		margin-bottom: 60px;
+	}
+	.formulario-de-pesquisa input {
+		width: 241px;
+	}
+	.selects {
+		flex-direction: column;
+	}
+	.selects select {
+		width: 280px;
+	}
+	.selects input {
+		width: 241px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.resultado {
+		flex-direction: column;
+		height: auto;
+	}
+	.div-menor {
+		width: 100%;
+		height: auto;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.div-menor img {
+		height: 290px;
+	}
+	.div-maior {
+		width: 100%;
+		height: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.div-maior p {
+		margin-left: 0;
+	}
+	.contato {
+		margin-left: 0;
+		width: 100%;
+	}
+	.redes-sociais {
+		margin-left: 0;
+		width: 100%;
+	}
+	.rodape {
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top: 80px;
+	}
+	.direitos p {
+		font-size: 13px;
+	}
+	.voltar-topo {
+		width: 50px;
+		height: 50px;
+	}
+	.modal-registro {
+		width: 287px;
+		height: 1475px;
+		margin-top: 50px;
+	}
+	.modal-registro input {
+		width: 230px;
+	}
+	.selects-registro {
+		width: 269px;
+		flex-direction: column;
+		margin-bottom: 0;
+	}
+	.selects-registro select {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.modal-registro label {
+		width: 230px;
+	}
+	.modal-registro button {
+		width: 269px;
+	}
+	.verifica-email {
+		width: 269px;
+	}
+	.modal-empresa {
+		width: 287px;
+		margin-top: 50px;
+	}
+	.foto-empresa {
+		width: 287px;
+	}
+	.dados-empresa {
+		height: auto;
+		flex-direction: column;
+		margin-top: 86px;
+	}
+	.dados-empresa-left {
+		height: auto;
+		width: 100%;
+	}
+	.dados-empresa-right {
+		height: auto;
+		width: 100%;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.rede-social-empresa {
+		margin-right: 0;
+		margin-left: 15px;
+	}
+	.div-info {
+		width: 280px;
+	}
+	.website {
+		width: 280px;
+	}
+
+}
+
 
 
 

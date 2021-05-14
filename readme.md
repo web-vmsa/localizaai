@@ -7,7 +7,7 @@ O localiza aí é um site de busca por comércios em qualquer lugar do país, vo
 Para utilizar o localiza aí, basta utilizar a url do site para saber as empresas cadastradas no seu estado, da seguinte forma.
 
 ```bash
-localizaai.com/home/estado/seuestado
+www.localizaai.com/home/estado/seuestado
 ```
 
 ## Contribuições
