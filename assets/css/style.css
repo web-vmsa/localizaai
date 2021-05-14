@@ -853,6 +853,9 @@ body {
 	.div-info {
 		width: 671px;
 	}
+	.website {
+		width: 310px;
+	}
 
 }
 
@@ -1009,9 +1012,500 @@ body {
 	.div-info {
 		width: 346px;
 	}
+	.website {
+		width: 310px;
+	}
 
 }
 
+/* ### Mobile: 416px ### */
+@media screen and (max-width: 416px) and (min-width: 412px){
+
+	.topo-escuro {
+		padding-right: 30px;
+		padding-left: 30px;
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+	.topo-menu {
+		padding-bottom: 13px;
+	}
+	.logotipo {
+		width: 150px;
+		height: 46px;
+	}
+	.logotipo img {
+		width: 150px;
+		height: 46px;
+	}
+	.texto-principal {
+		margin-top: 80px;
+		flex-direction: column-reverse;
+	}
+	.texto {
+		width: 100%;
+		margin-top: 40px;
+	}
+	.imagem {
+		width: 100%;
+	}
+	.botao-registrar {
+		width: 362px;
+	}
+	.corpo {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+	.descricao {
+		margin-top: 55px;
+		text-align: center;
+	}
+	.formulario-de-pesquisa {
+		margin-bottom: 60px;
+	}
+	.formulario-de-pesquisa input {
+		width: 323px;
+	}
+	.formulario-de-pesquisa button {
+		width: 101%;
+	}
+	.selects {
+		width: 101%;
+		flex-direction: column;
+	}
+	.selects input {
+		width: 326px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.resultado {
+		flex-direction: column;
+		height: auto;
+	}
+	.div-menor {
+		width: 100%;
+		height: auto;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.div-menor img {
+		height: 290px;
+	}
+	.div-maior {
+		width: 100%;
+		height: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.div-maior p {
+		margin-left: 0;
+	}
+	.contato {
+		margin-left: 0;
+		width: 100%;
+	}
+	.redes-sociais {
+		margin-left: 0;
+		width: 100%;
+	}
+	.rodape {
+		padding-left: 30px;
+		padding-right: 30px;
+		margin-top: 80px;
+	}
+	.direitos p {
+		font-size: 15px;
+	}
+	.voltar-topo {
+		width: 50px;
+		height: 50px;
+	}
+	.modal-registro {
+		width: 380px;
+		height: 1475px;
+		margin-top: 50px;
+	}
+	.modal-registro input {
+		width: 300px;
+	}
+	.selects-registro {
+		width: 340px;
+		flex-direction: column;
+		margin-bottom: 0;
+	}
+	.selects-registro select {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.modal-registro label {
+		width: 300px;
+	}
+	.modal-registro button {
+		width: 341px;
+	}
+	.verifica-email {
+		width: 341px;
+	}
+	.modal-empresa {
+		width: 380px;
+		margin-top: 50px;
+	}
+	.foto-empresa {
+		width: 380px;
+	}
+	.dados-empresa {
+		height: auto;
+		flex-direction: column;
+		margin-top: 111px;
+	}
+	.dados-empresa-left {
+		height: auto;
+		width: 100%;
+	}
+	.dados-empresa-right {
+		height: auto;
+		width: 100%;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.rede-social-empresa {
+		margin-right: 0;
+		margin-left: 15px;
+	}
+	.div-info {
+		width: 346px;
+	}
+	.website {
+		width: 310px;
+	}
+
+}
+
+/* ### Mobile: 375px ### */
+@media screen and (max-width: 375px) and (min-width: 370px){
+
+	.topo-escuro {
+		padding-right: 20px;
+		padding-left: 20px;
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+	.topo-menu {
+		padding-bottom: 13px;
+		flex-direction: column;
+	}
+	.logotipo {
+		width: 170px;
+		height: 69px;
+	}
+	.logotipo img {
+		width: 170px;
+		height: 52px;
+	}
+	.texto-principal {
+		margin-top: 80px;
+		flex-direction: column-reverse;
+	}
+	.texto {
+		width: 100%;
+		margin-top: 40px;
+	}
+	.imagem {
+		width: 100%;
+	}
+	.botao-registrar {
+		width: 329px;
+	}
+	.corpo {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	.descricao {
+		margin-top: 55px;
+		text-align: center;
+	}
+	.formulario-de-pesquisa {
+		margin-bottom: 60px;
+	}
+	.formulario-de-pesquisa input {
+		width: 294px;
+	}
+	.selects {
+		flex-direction: column;
+	}
+	.selects select {
+		width: 337px;
+	}
+	.selects input {
+		width: 294px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.resultado {
+		flex-direction: column;
+		height: auto;
+	}
+	.div-menor {
+		width: 100%;
+		height: auto;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.div-menor img {
+		height: 290px;
+	}
+	.div-maior {
+		width: 100%;
+		height: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.div-maior p {
+		margin-left: 0;
+	}
+	.contato {
+		margin-left: 0;
+		width: 100%;
+	}
+	.redes-sociais {
+		margin-left: 0;
+		width: 100%;
+	}
+	.rodape {
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top: 80px;
+	}
+	.direitos p {
+		font-size: 15px;
+	}
+	.voltar-topo {
+		width: 50px;
+		height: 50px;
+	}
+	.modal-registro {
+		width: 336px;
+		height: 1475px;
+		margin-top: 50px;
+	}
+	.modal-registro input {
+		width: 270px;
+	}
+	.selects-registro {
+		width: 309px;
+		flex-direction: column;
+		margin-bottom: 0;
+	}
+	.selects-registro select {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.modal-registro label {
+		width: 270px;
+	}
+	.modal-registro button {
+		width: 309px;
+	}
+	.verifica-email {
+		width: 309px;
+	}
+	.modal-empresa {
+		width: 336px;
+		margin-top: 50px;
+	}
+	.foto-empresa {
+		width: 336px;
+	}
+	.dados-empresa {
+		height: auto;
+		flex-direction: column;
+		margin-top: 111px;
+	}
+	.dados-empresa-left {
+		height: auto;
+		width: 100%;
+	}
+	.dados-empresa-right {
+		height: auto;
+		width: 100%;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.rede-social-empresa {
+		margin-right: 0;
+		margin-left: 15px;
+	}
+	.div-info {
+		width: 305px;
+	}
+	.website {
+		width: 310px;
+	}
+
+}
+
+/* ### Mobile: 360px ### */
+@media screen and (max-width: 360px) and (min-width: 356px){
+
+	.topo-escuro {
+		padding-right: 20px;
+		padding-left: 20px;
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+	.topo-menu {
+		padding-bottom: 13px;
+		flex-direction: column;
+	}
+	.logotipo {
+		width: 170px;
+		height: 69px;
+	}
+	.logotipo img {
+		width: 170px;
+		height: 52px;
+	}
+	.texto-principal {
+		margin-top: 80px;
+		flex-direction: column-reverse;
+	}
+	.texto {
+		width: 100%;
+		margin-top: 40px;
+	}
+	.imagem {
+		width: 100%;
+	}
+	.botao-registrar {
+		width: 315px;
+	}
+	.corpo {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	.descricao {
+		margin-top: 55px;
+		text-align: center;
+	}
+	.formulario-de-pesquisa {
+		margin-bottom: 60px;
+	}
+	.formulario-de-pesquisa input {
+		width: 280px;
+	}
+	.selects {
+		flex-direction: column;
+	}
+	.selects select {
+		width: 321px;
+	}
+	.selects input {
+		width: 280px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.resultado {
+		flex-direction: column;
+		height: auto;
+	}
+	.div-menor {
+		width: 100%;
+		height: auto;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.div-menor img {
+		height: 290px;
+	}
+	.div-maior {
+		width: 100%;
+		height: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.div-maior p {
+		margin-left: 0;
+	}
+	.contato {
+		margin-left: 0;
+		width: 100%;
+	}
+	.redes-sociais {
+		margin-left: 0;
+		width: 100%;
+	}
+	.rodape {
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top: 80px;
+	}
+	.direitos p {
+		font-size: 13px;
+	}
+	.voltar-topo {
+		width: 50px;
+		height: 50px;
+	}
+	.modal-registro {
+		width: 336px;
+		height: 1475px;
+		margin-top: 50px;
+	}
+	.modal-registro input {
+		width: 270px;
+	}
+	.selects-registro {
+		width: 309px;
+		flex-direction: column;
+		margin-bottom: 0;
+	}
+	.selects-registro select {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.modal-registro label {
+		width: 270px;
+	}
+	.modal-registro button {
+		width: 309px;
+	}
+	.verifica-email {
+		width: 309px;
+	}
+	.modal-empresa {
+		width: 336px;
+		margin-top: 50px;
+	}
+	.foto-empresa {
+		width: 336px;
+	}
+	.dados-empresa {
+		height: auto;
+		flex-direction: column;
+		margin-top: 111px;
+	}
+	.dados-empresa-left {
+		height: auto;
+		width: 100%;
+	}
+	.dados-empresa-right {
+		height: auto;
+		width: 100%;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.rede-social-empresa {
+		margin-right: 0;
+		margin-left: 15px;
+	}
+	.div-info {
+		width: 305px;
+	}
+	.website {
+		width: 310px;
+	}
+
+}
 
 
 
