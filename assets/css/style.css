@@ -701,9 +701,15 @@ body {
 	transform: rotate(-90deg);
 }
 
-/* ### Mobile: 1024px ### */
+/* ### Tablet: 1024px ### */
 @media screen and (max-width: 1024px) and (min-width: 1000px){
 
+	.fundo-escuro-leia-mais {
+		height: 1366px;
+	}
+	.fundo-escuro {
+		height: 1366px;
+	}
 	.topo-escuro {
 		padding-left: 60px;
 		padding-right: 60px;
@@ -763,6 +769,12 @@ body {
 /* ### Mobile: 768px ### */
 @media screen and (max-width: 768px) and (min-width: 760px){
 
+	.fundo-escuro-leia-mais {
+		height: 1024px;
+	}
+	.fundo-escuro {
+		height: 1024px;
+	}
 	.topo-escuro {
 		padding-right: 30px;
 		padding-left: 30px;
@@ -862,6 +874,12 @@ body {
 /* ### Mobile: 425px ### */
 @media screen and (max-width: 425px) and (min-width: 420px){
 
+	.fundo-escuro-leia-mais {
+		height: 900px;
+	}
+	.fundo-escuro {
+		height: 900px;
+	}
 	.topo-escuro {
 		padding-right: 30px;
 		padding-left: 30px;
@@ -1019,8 +1037,14 @@ body {
 }
 
 /* ### Mobile: 416px ### */
-@media screen and (max-width: 416px) and (min-width: 412px){
+@media screen and (max-width: 416px) and (min-width: 411px){
 
+	.fundo-escuro-leia-mais {
+		height: 900px;
+	}
+	.fundo-escuro {
+		height: 900px;
+	}
 	.topo-escuro {
 		padding-right: 30px;
 		padding-left: 30px;
@@ -1184,6 +1208,12 @@ body {
 /* ### Mobile: 375px ### */
 @media screen and (max-width: 375px) and (min-width: 370px){
 
+	.fundo-escuro-leia-mais {
+		height: 700px;
+	}
+	.fundo-escuro {
+		height: 700px;
+	}
 	.topo-escuro {
 		padding-right: 20px;
 		padding-left: 20px;
@@ -1347,6 +1377,12 @@ body {
 /* ### Mobile: 360px ### */
 @media screen and (max-width: 360px) and (min-width: 356px){
 
+	.fundo-escuro-leia-mais {
+		height: 700px;
+	}
+	.fundo-escuro {
+		height: 700px;
+	}
 	.topo-escuro {
 		padding-right: 20px;
 		padding-left: 20px;
@@ -1510,6 +1546,12 @@ body {
 /* ### Mobile: 320px ### */
 @media screen and (max-width: 320px) and (min-width: 315px){
 
+	.fundo-escuro-leia-mais {
+		height: 600px;
+	}
+	.fundo-escuro {
+		height: 600px;
+	}
 	.topo-escuro {
 		padding-right: 20px;
 		padding-left: 20px;
