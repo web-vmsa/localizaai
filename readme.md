@@ -13,3 +13,7 @@ www.localizaai.com/home/estado/seuestado
 ## Contribuições
 
 Você pode baixar ou contribuir com este projeto. Lembrando que este projeto estará disponível online em poucos meses.
+
+## Retificação
+
+A logotipo e o nome foram alterados para Procure Aki, porém não se viu a necessidade de alterar o github, ainda.

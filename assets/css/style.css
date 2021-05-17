@@ -327,6 +327,23 @@ body {
 	height: 60px;
 }
 
+/* Menu */
+.menu {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.menu a {
+	margin: 0;
+	padding: 0;
+	color: white;
+	font-family: 'Questrial', sans-serif;
+	font-size: 18px;
+	margin-right: 60px;
+	text-decoration: none;
+}
+
 /* Pesquisa menu */
 .pesquisa-menu {
 	display: flex;
@@ -659,17 +676,60 @@ body {
 	cursor: pointer;
 }
 
+/* Navegação */
+.navegacao {
+	margin-top: 90px;
+	display: flex;
+	background-color: #070707;
+	padding-left: 90px;
+	padding-right: 90px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	justify-content: space-between;
+	align-items: center;
+}
+.navegacao a:hover {
+	color: #F7DC5F;
+}
+.navegacao-social {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.navegacao-social a {
+	color: white;
+	font-family: 'Questrial', sans-serif;
+	font-size: 16px;
+}
+.navegacao-social img {
+	width: 30px;
+	height: 30px;
+	margin-right: 15px;
+}
+.navegacao-menu {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.navegacao-menu a {
+	color: white;
+	font-family: 'Questrial', sans-serif;
+	font-size: 16px;
+	margin-left: 20px;
+}
+
 /* Rodapé */
 .rodape {
-	margin-top: 90px;
 	display: flex;
 	background-color: #DCDCDC;
 	padding-left: 90px;
 	padding-right: 90px;
 	justify-content: space-between;
 	align-items: center;
-	padding-top: 35px;
-	padding-bottom: 35px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 .direitos {
 	display: flex;
@@ -745,6 +805,10 @@ body {
 	}
 	.div-maior {
 		height: 180px;
+	}
+	.navegacao {
+		padding-left: 60px;
+		padding-right: 60px;
 	}
 	.rodape {
 		padding-left: 60px;
@@ -829,6 +893,10 @@ body {
 		height: 45px;
 		font-size: 16px;
 	}
+	.navegacao {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
 	.rodape {
 		padding-left: 30px;
 		padding-right: 30px;
@@ -889,13 +957,16 @@ body {
 	.topo-menu {
 		padding-bottom: 13px;
 	}
+	.menu {
+		display: none;
+	}
 	.logotipo {
-		width: 150px;
-		height: 46px;
+		width: 162px;
+		height: 50px;
 	}
 	.logotipo img {
-		width: 150px;
-		height: 46px;
+		width: 162px;
+		height: 50px;
 	}
 	.texto-principal {
 		margin-top: 80px;
@@ -963,10 +1034,26 @@ body {
 		margin-left: 0;
 		width: 100%;
 	}
-	.rodape {
+	.navegacao {
 		padding-left: 30px;
 		padding-right: 30px;
 		margin-top: 80px;
+		flex-direction: column;
+	}
+	.navegacao-social {
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+	.navegacao-menu {
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		margin-top: 10px;
+	}
+	.rodape {
+		padding-left: 30px;
+		padding-right: 30px;
 	}
 	.direitos p {
 		font-size: 15px;
@@ -1054,6 +1141,9 @@ body {
 	.topo-menu {
 		padding-bottom: 13px;
 	}
+	.menu {
+		display: none;
+	}
 	.logotipo {
 		width: 150px;
 		height: 46px;
@@ -1132,10 +1222,24 @@ body {
 		margin-left: 0;
 		width: 100%;
 	}
+	.navegacao {
+		padding-left: 30px;
+		padding-right: 30px;
+		flex-direction: column;
+		margin-top: 80px;
+	}
+	.navegacao-social {
+		align-items: center;
+		justify-content: center;
+	}
+	.navegacao-menu {
+		align-items: center;
+		justify-content: center;
+		margin-top: 20px;
+	}
 	.rodape {
 		padding-left: 30px;
 		padding-right: 30px;
-		margin-top: 80px;
 	}
 	.direitos p {
 		font-size: 15px;
@@ -1224,13 +1328,16 @@ body {
 		padding-bottom: 13px;
 		flex-direction: column;
 	}
+	.menu {
+		display: none;
+	}
 	.logotipo {
-		width: 170px;
-		height: 69px;
+		width: 200px;
+		height: 76px;
 	}
 	.logotipo img {
-		width: 170px;
-		height: 52px;
+		width: 200px;
+		height: 63px;
 	}
 	.texto-principal {
 		margin-top: 80px;
@@ -1301,10 +1408,24 @@ body {
 		margin-left: 0;
 		width: 100%;
 	}
+	.navegacao {
+		padding-left: 20px;
+		padding-right: 20px;
+		flex-direction: column;
+		margin-top: 80px;
+	}
+	.navegacao-social {
+		align-items: center;
+		justify-content: center;
+	}
+	.navegacao-menu {
+		align-items: center;
+		justify-content: center;
+		margin-top: 20px;
+	}
 	.rodape {
 		padding-left: 20px;
 		padding-right: 20px;
-		margin-top: 80px;
 	}
 	.direitos p {
 		font-size: 15px;
@@ -1393,13 +1514,16 @@ body {
 		padding-bottom: 13px;
 		flex-direction: column;
 	}
+	.menu {
+		display: none;
+	}
 	.logotipo {
-		width: 170px;
-		height: 69px;
+		width: 200px;
+		height: 76px;
 	}
 	.logotipo img {
-		width: 170px;
-		height: 52px;
+		width: 200px;
+		height: 63px;
 	}
 	.texto-principal {
 		margin-top: 80px;
@@ -1470,10 +1594,24 @@ body {
 		margin-left: 0;
 		width: 100%;
 	}
+	.navegacao {
+		padding-left: 20px;
+		padding-right: 20px;
+		flex-direction: column;
+		margin-top: 80px;
+	}
+	.navegacao-social {
+		align-items: center;
+		justify-content: center;
+	}
+	.navegacao-menu {
+		align-items: center;
+		justify-content: center;
+		margin-top: 20px;
+	}
 	.rodape {
 		padding-left: 20px;
 		padding-right: 20px;
-		margin-top: 80px;
 	}
 	.direitos p {
 		font-size: 13px;
@@ -1563,12 +1701,12 @@ body {
 		flex-direction: column;
 	}
 	.logotipo {
-		width: 170px;
-		height: 69px;
+		width: 200px;
+		height: 76px;
 	}
 	.logotipo img {
-		width: 170px;
-		height: 52px;
+		width: 200px;
+		height: 63px;
 	}
 	.texto-principal {
 		margin-top: 80px;
@@ -1639,10 +1777,24 @@ body {
 		margin-left: 0;
 		width: 100%;
 	}
-	.rodape {
+	.navegacao {
 		padding-left: 20px;
 		padding-right: 20px;
 		margin-top: 80px;
+		flex-direction: column;
+	}
+	.navegacao-social {
+		align-items: center;
+		justify-content: center;
+	}
+	.navegacao-menu {
+		align-items: center;
+		justify-content: center;
+		margin-top: 20px;
+	}
+	.rodape {
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 	.direitos p {
 		font-size: 13px;
@@ -1711,13 +1863,3 @@ body {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-

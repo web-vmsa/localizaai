@@ -2,8 +2,8 @@
 <html>
 <head>
 	<!-- Primary Meta Tags -->
-	<title>Localiza aí — Valorizando o comércio local</title>
-	<meta name="title" content="Localiza aí — Valorizando o comércio local">
+	<title>Procure Aki — Valorizando o comércio local</title>
+	<meta name="title" content="Procure Aki — Valorizando o comércio local">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Nós somos uma opção para divulgação de empresas gratuitamente. Procure um negócio ou cadastre a sua empresa.">
@@ -11,22 +11,22 @@
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="<?php echo BASE_URL; ?>">
-	<meta property="og:title" content="Localiza aí — Valorizando o comércio local">
+	<meta property="og:title" content="Procure Aki — Valorizando o comércio local">
 	<meta property="og:description" content="Nós somos uma opção para divulgação de empresas gratuitamente. Procure um negócio ou cadastre a sua empresa.">
-	<meta property="og:image" content="<?php echo BASE_URL; ?>assets/imgs/Localiza aí - Logotipo.png">
+	<meta property="og:image" content="<?php echo BASE_URL; ?>assets/imgs/Procure Aki - Logotipo.png">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="<?php echo BASE_URL; ?>">
-	<meta property="twitter:title" content="Localiza aí — Valorizando o comércio local">
+	<meta property="twitter:title" content="Procure Aki — Valorizando o comércio local">
 	<meta property="twitter:description" content="Nós somos uma opção para divulgação de empresas gratuitamente. Procure um negócio ou cadastre a sua empresa.">
-	<meta property="twitter:image" content="<?php echo BASE_URL; ?>assets/imgs/Localiza aí - Logotipo.png">
+	<meta property="twitter:image" content="<?php echo BASE_URL; ?>assets/imgs/Procure Aki - Logotipo.png">
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/style.css">
 
 	<!-- Favicon -->
-	<link rel="icon" href="<?php echo BASE_URL; ?>assets/imgs/favicon-removebg-preview.png" type="image/x-icon" />
+	<link rel="icon" href="<?php echo BASE_URL; ?>assets/imgs/favicon.png" type="image/x-icon" />
 
 	<!-- Fonte 1: Libre Baskerville -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -171,6 +171,11 @@
 			
 			<div class="logotipo">
 				<a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL; ?>assets/imgs/logotipo-deitada.png"></a>
+			</div>
+
+			<div class="menu">
+				<a href="mailto:suporte@procureaki.com">SUPORTE</a>
+				<a href="https://instagram.com/web_vmsa">INSTAGRAM</a>
 			</div>
 
 			<div class="pesquisa-menu">
@@ -561,10 +566,23 @@
 
 	</div>
 
+	<!-- Navegação -->
+	<div class="navegacao">
+		<div class="navegacao-social">
+			<a href=""><img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-whatsapp-2"></a>
+			<a href="https://instagram.com/web_vmsa"><img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-instagram-12"></a>
+			<a href="">suporte@procureaki.com</a>
+		</div>
+		<div class="navegacao-menu">
+			<a href="mailto:suporte@procureaki.com">Suporte</a>
+			<a href="#caixa_pesquisa">Pesquisar</a>
+		</div>
+	</div>
+
 	<!-- Rodapé -->
 	<div class="rodape">
 		<div class="direitos">
-			<img src="<?php echo BASE_URL; ?>assets/imgs/favicon-removebg-preview.png"><p>LOCALIZA AÍ | @2021 - TODOS OS DIREITOS RESERVADOS</p>
+			<img src="<?php echo BASE_URL; ?>assets/imgs/favicon-removebg-preview.png"><p>PROCURE AKI | @2021 - TODOS OS DIREITOS RESERVADOS</p>
 		</div>
 		<a href="#topo">
 			<div class="voltar-topo">
