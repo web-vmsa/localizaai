@@ -28,6 +28,30 @@ class Empresas extends model {
 	public $status;
 
 	/*
+	* Função de verificar se e-mail já está registrado
+	*
+	* Esta função vai verificar se a empresa já está cadastrada
+	*
+	* @param $nome varchar é o nome da empresa
+	* @param $email varchar é o e-mail da empresa
+	* @return true or false
+	*/
+	public function check(){
+
+		$sql = "SELECT * FROM empresas WHERE nome = :nome AND email = :email";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':nome', $this->nome);
+		$sql->bindValue(':email', $this->email);
+		$sql->execute();
+		if ($sql->rowCount() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
+	/*
 	* Função de adicionar/registrar uma empresa
 	* 
 	* Esta função vai dar um insert na base de dados na tabela empresas e adicionar a nova empresa

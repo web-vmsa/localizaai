@@ -138,7 +138,7 @@ $(document).ready(function(){
 					$("#whatsapp").css('border', '2px solid #F7DC5F');
 					$("#deixa_vermelho").css('border', '2px solid #F7DC5F');
 					$("#verifica_email").show();
-					alert(result);
+					$("#verifica_email p").html(result);
 				}
 			});
 		}

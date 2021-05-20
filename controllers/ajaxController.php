@@ -26,30 +26,41 @@ class ajaxController extends controller {
 			$site = htmlspecialchars($_POST['site']);
 			$chave = md5($nome.$email);
 			$status = 1;
+			
+			$check = new Empresas();
+			$check->nome = $nome;
+			$check->email = $email;
+			$check = $check->check();
 
-			$set = new Empresas();
-			$set->nome = $nome;
-			$set->cnpj = $cnpj;
-			$set->foto = $foto;
-			$set->servico = $servico;
-			$set->retirada = $retirada;
-			$set->telefone = $telefone;
-			$set->email = $email;
-			$set->cep = $cep;
-			$set->bairro = $bairro;
-			$set->cidade = $cidade;
-			$set->estado = $estado;
-			$set->whatsapp = $whatsapp;
-			$set->facebook = $facebook;
-			$set->instagram = $instagram;
-			$set->site = $site;
-			$set->chave = $chave;
-			$set->status = $status;
-			$set->set();
+			if ($check == true) {
+				
+				$dados['resultado'] = "Esta empresa já está registrada :(";
 
-			$mensagem = "Minha empresa é a".$nome.". Meu CNPJ é ".$cnpj.". Minha foto é ".$foto.".Meu serviço é ".$servico.". Pode-se retirar por ".$retirada.". Atendo pelo telefone ".$telefone." e pelo whatsapp ".$whatsapp.". Meu e-mail é ".$email.". Meu CEP é ".$cep.". Resido em ".$cidade.", estado do ".$estado." no bairro ".$bairro.". Minhas redes sociais são: instagram (".$instagram."), facebook (".$facebook.") e meu site é o ".$site.". Minha chave é a ".$chave." e meu status ".$status.". Estou esperando o resultado do meu registro.";
+			} else {
 
-			$dados['resultado'] = $mensagem;
+				$set = new Empresas();
+				$set->nome = $nome;
+				$set->cnpj = $cnpj;
+				$set->foto = $foto;
+				$set->servico = $servico;
+				$set->retirada = $retirada;
+				$set->telefone = $telefone;
+				$set->email = $email;
+				$set->cep = $cep;
+				$set->bairro = $bairro;
+				$set->cidade = $cidade;
+				$set->estado = $estado;
+				$set->whatsapp = $whatsapp;
+				$set->facebook = $facebook;
+				$set->instagram = $instagram;
+				$set->site = $site;
+				$set->chave = $chave;
+				$set->status = $status;
+				$set->set();
+
+				$dados['resultado'] = "* Por favor, verifique o seu e-mail para concluirmos o cadastro.";
+				
+			}
 			
 		}
 
