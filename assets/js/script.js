@@ -1,5 +1,13 @@
 $(document).ready(function(){
 
+	var environment = "development";
+
+	if (environment == "development") {
+		var raiz = "http://localhost/localizaai/";
+	} else {
+		var raiz = "http://localhost/localizaai/";
+	}
+
 	// Não exibi
 	$("#fundo_escuro").hide();
 
@@ -9,6 +17,17 @@ $(document).ready(function(){
 
 	// Rolagem lenta para o formulário de pesquisa
 	$('.pesquisa-menu a[href^="#"]').on('click', function(e) {
+	  e.preventDefault();
+	  var id = $(this).attr('href'),
+	  targetOffset = $(id).offset().top;
+	    
+	  $('html, body').animate({ 
+	    scrollTop: targetOffset - 100
+	  }, 500);
+	});
+
+	// Rolagem lenta para o formulário de pesquisa do rodapé
+	$('.navegacao-menu a[href^="#"]').on('click', function(e) {
 	  e.preventDefault();
 	  var id = $(this).attr('href'),
 	  targetOffset = $(id).offset().top;
@@ -48,7 +67,9 @@ $(document).ready(function(){
 
 		e.preventDefault();
 
-		var dados = $(this).serialize();
+		var registro_dados = new FormData();
+
+		var arquivos = $('#foto_local')[0].files;
 
 		var nome_da_empresa = $("#nome_empresa_registro").val();
 		var cnpj = $("#cnpj").val();
@@ -61,9 +82,28 @@ $(document).ready(function(){
 		var cidade = $("#cidade").val();
 		var estado = $("#estado").val();
 		var whatsapp = $("#whatsapp").val();
+		var foto_local = $("#foto_local").val();
+
+		// Anexos
+		registro_dados.append('nome_empresa_registro', $("#nome_empresa_registro").val());
+		registro_dados.append('cnpj', $("#cnpj").val());
+		registro_dados.append('servico', $("#servico").val());
+		registro_dados.append('retirada', $("#retirada").val());
+		registro_dados.append('telefone', $("#telefone").val());
+		registro_dados.append('email', $("#email").val());
+		registro_dados.append('cep', $("#cep").val());
+		registro_dados.append('bairro', $("#bairro").val());
+		registro_dados.append('cidade', $("#cidade").val());
+		registro_dados.append('estado', $("#estado").val());
+		registro_dados.append('whatsapp', $("#whatsapp").val());
+		registro_dados.append('facebook', $("#facebook").val());
+		registro_dados.append('instagram', $("#instagram").val());
+		registro_dados.append('site', $("#site").val());
+		registro_dados.append('arquivos', arquivos[0]);
 
 		if (nome_da_empresa == "" || cnpj == "" || servico == "Serviço oferecido" || retirada == "Modo de serviço" 
-			|| telefone == "" || email == "" || cep == "" || bairro == "" || cidade == "" || estado == "" || whatsapp == "") {
+			|| telefone == "" || email == "" || cep == "" || bairro == "" || cidade == "" || estado == "" || whatsapp == "" ||
+			foto_local == "") {
 			$("#nome_empresa_registro").css('border', '2px solid #FE0000');
 			$("#cnpj").css('border', '2px solid #FE0000');
 			$("#servico").css('border', '2px solid #FE0000');
@@ -75,20 +115,32 @@ $(document).ready(function(){
 			$("#cidade").css('border', '2px solid #FE0000');
 			$("#estado").css('border', '2px solid #FE0000');
 			$("#whatsapp").css('border', '2px solid #FE0000');
+			$("#deixa_vermelho").css('border', '2px solid #FE0000');
 		} else {
-			$("#form_registro input").val("");
-			$("#nome_empresa_registro").css('border', '2px solid #F7DC5F');
-			$("#cnpj").css('border', '2px solid #F7DC5F');
-			$("#servico").css('border', '2px solid #F7DC5F');
-			$("#retirada").css('border', '2px solid #F7DC5F');
-			$("#telefone").css('border', '2px solid #F7DC5F');
-			$("#email").css('border', '2px solid #F7DC5F');
-			$("#cep").css('border', '2px solid #F7DC5F');
-			$("#bairro").css('border', '2px solid #F7DC5F');
-			$("#cidade").css('border', '2px solid #F7DC5F');
-			$("#estado").css('border', '2px solid #F7DC5F');
-			$("#whatsapp").css('border', '2px solid #F7DC5F');
-			$("#verifica_email").show();
+			$.ajax({
+				type:'POST',
+				url:raiz+'ajax',
+				data:registro_dados,
+				contentType:false,
+				processData:false,
+				success:function(result){
+					$("#form_registro input").val("");
+					$("#nome_empresa_registro").css('border', '2px solid #F7DC5F');
+					$("#cnpj").css('border', '2px solid #F7DC5F');
+					$("#servico").css('border', '2px solid #F7DC5F');
+					$("#retirada").css('border', '2px solid #F7DC5F');
+					$("#telefone").css('border', '2px solid #F7DC5F');
+					$("#email").css('border', '2px solid #F7DC5F');
+					$("#cep").css('border', '2px solid #F7DC5F');
+					$("#bairro").css('border', '2px solid #F7DC5F');
+					$("#cidade").css('border', '2px solid #F7DC5F');
+					$("#estado").css('border', '2px solid #F7DC5F');
+					$("#whatsapp").css('border', '2px solid #F7DC5F');
+					$("#deixa_vermelho").css('border', '2px solid #F7DC5F');
+					$("#verifica_email").show();
+					alert(result);
+				}
+			});
 		}
 
 	});

@@ -135,9 +135,9 @@
 					</select>
 					<select id="retirada" name="retirada">
 						<option>Modo de serviço</option>
-						<option value="Delivery">Apenas delivery</option>
+						<option value="Apenas delivery">Apenas delivery</option>
 						<option value="Presencialmente">Presencialmente</option>
-						<option>Delivery & presencial</option>
+						<option value="Delivery & presencial">Delivery & presencial</option>
 					</select>
 				</div>
 
@@ -151,7 +151,7 @@
 				<input type="text" name="facebook" id="facebook" placeholder="Facebook">
 				<input type="text" name="instagram" id="instagram" placeholder="Instagram">
 				<input type="text" name="site" id="site" placeholder="Site">
-				<label for="foto_local">Foto do local</label>
+				<label id="deixa_vermelho" for="foto_local">Foto do local</label>
 				<input type="file" name="foto_local" id="foto_local" style="display: none;">
 				<button type="submit">Registrar minha empresa</button>
 			</form>
