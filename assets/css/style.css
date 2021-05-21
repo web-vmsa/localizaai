@@ -507,7 +507,7 @@ body {
 	justify-content: space-between;
 }
 .selects select {
-	width: 366px;
+	width: 260px;
 	height: 56px;
 	background-color: transparent;
 	border: 2px solid #00B2FE;
@@ -518,7 +518,7 @@ body {
 	padding-left: 30px;
 }
 .selects input {
-	width: 366px;
+	width: 242px;
 	height: 50px;
 	background-color: transparent;
 	border: 2px solid #00B2FE;
@@ -789,10 +789,10 @@ body {
 		width: 863px;
 	}
 	.selects select {
-		width: 280px;
+		width: 212px;
 	}
 	.selects input {
-		width: 280px;
+		width: 171px;
 	}
 	.resultado {
 		height: 180px;
@@ -870,11 +870,16 @@ body {
 	.formulario-de-pesquisa input {
 		width: 666px;
 	}
+	.selects {
+		flex-direction: column;
+		justify-content: center;
+	}
 	.selects input {
-		width: 212px;
+		width: 94%;
+		margin-top: 20px;
 	}
 	.selects select {
-		width: 212px;
+		width: 100%;
 	}
 	.div-maior {
 		height: 150px;
@@ -999,10 +1004,12 @@ body {
 	.selects {
 		flex-direction: column;
 	}
+	.selects select {
+		width: 100%;
+	}
 	.selects input {
 		width: 326px;
 		margin-top: 20px;
-		margin-bottom: 20px;
 	}
 	.resultado {
 		flex-direction: column;
@@ -1178,7 +1185,7 @@ body {
 		margin-bottom: 60px;
 	}
 	.formulario-de-pesquisa input {
-		width: 323px;
+		width: 317px;
 	}
 	.formulario-de-pesquisa button {
 		width: 101%;
@@ -1187,10 +1194,12 @@ body {
 		width: 101%;
 		flex-direction: column;
 	}
+	.selects select {
+		width: 100%;
+	}
 	.selects input {
-		width: 326px;
+		width: 319px;
 		margin-top: 20px;
-		margin-bottom: 20px;
 	}
 	.resultado {
 		flex-direction: column;
@@ -1376,7 +1385,6 @@ body {
 	.selects input {
 		width: 294px;
 		margin-top: 20px;
-		margin-bottom: 20px;
 	}
 	.resultado {
 		flex-direction: column;
@@ -1562,7 +1570,6 @@ body {
 	.selects input {
 		width: 280px;
 		margin-top: 20px;
-		margin-bottom: 20px;
 	}
 	.resultado {
 		flex-direction: column;
@@ -1684,6 +1691,9 @@ body {
 /* ### Mobile: 320px ### */
 @media screen and (max-width: 320px) and (min-width: 315px){
 
+	.menu {
+		display: none;
+	}
 	.fundo-escuro-leia-mais {
 		height: 600px;
 	}
@@ -1745,7 +1755,6 @@ body {
 	.selects input {
 		width: 241px;
 		margin-top: 20px;
-		margin-bottom: 20px;
 	}
 	.resultado {
 		flex-direction: column;

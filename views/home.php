@@ -7,7 +7,7 @@
 		</div>
 
 		<!-- Formulário de pesquisa -->
-		<form name="form_pesquisa" class="formulario-de-pesquisa" method="POST" autocomplete="off">
+		<form name="form_pesquisa" class="formulario-de-pesquisa" method="GET" action="<?php echo BASE_URL; ?>home/resultados" autocomplete="off">
 			<input id="nome_empresa" type="text" name="nome_empresa" placeholder="Nome da empresa">
 
 			<div class="selects">
@@ -35,14 +35,12 @@
 					<option value="Turismo">Turismo</option>
 				</select>
 
-				<input type="text" name="bairro" placeholder="Bairro">
+				<input type="text" id="bairro" name="bairro" placeholder="Bairro">
 
-				<select id="cidade" name="cidade">
-					<option>Cidade</option>
-					<?php foreach($cidades as $dados): ?>
-					<option value="<?php echo $dados; ?>"><?php echo $dados; ?></option>
-					<?php endforeach; ?>
-				</select>
+				<input type="text" id="cidade" name="cidade" placeholder="Cidade">
+
+				<input type="text" id="estado" name="estado" placeholder="Estado">
+
 			</div>
 
 			<button type="submit" onclick="return validar()">Pesquisar</button>
