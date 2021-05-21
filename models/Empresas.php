@@ -100,4 +100,43 @@ class Empresas extends model {
 
 	}
 
+	/*
+	* Função de pegar as empresas cadastradas recentemente
+	*
+	* Esta função vai apenas pegar todas as empresas cadastradas recentemente na base de dados
+	*
+	* @param $status tinyint é o status das empresas, deve estar setado em 2
+	* @return true or false
+	*/
+	public function getAll(){
+
+		$sql = "SELECT * FROM empresas WHERE status = :status ORDER BY id DESC LIMIT 13";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':status', $this->status);
+		$sql->execute();
+		if ($sql->rowCount() > 0) {
+			return $sql->fetchAll();
+		} else {
+			return false;
+		}
+
+	}
+
+	/*
+	* Função de pegar o cep da empresa
+	*
+	* Esta função os dados da localidade de acordo com o CEP
+	*
+	* @param $cep varchar é o cep da empresa
+	* @return true or false
+	*/
+	function getCep(){
+
+	    $cep = preg_replace("/[^0-9]/", "", $this->cep);
+	    $url = "http://viacep.com.br/ws/$cep/xml/";
+
+	    $xml = simplexml_load_file($url);
+	    return $xml;
+	}
+
 }

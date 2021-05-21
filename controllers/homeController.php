@@ -5,15 +5,22 @@ class homeController extends controller {
 
 		$cidades = array('Selecione um estado');
 
+		$recentes = new Empresas();
+		$recentes->status = 2;
+
 		$dados = array(
-			'cidades' => $cidades
+			'cidades' => $cidades,
+			'recentes' => $recentes->getAll()
 		);
 
-		$this->loadView('home', $dados);
+		$this->loadTemplate('home', $dados);
 
 	}
 
 	public function estado($estado) {
+
+		$recentes = new Empresas();
+		$recentes->status = 2;
 
 		if ($estado == "") {
 			
@@ -33,9 +40,12 @@ class homeController extends controller {
 
 		}
 
-		$dados = array('cidades' => $cidades);
+		$dados = array(
+			'cidades' => $cidades,
+			'recentes' => $recentes->getAll()
+		);
 
-		$this->loadView('home', $dados);
+		$this->loadTemplate('home', $dados);
 
 	}
 	
