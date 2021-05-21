@@ -582,7 +582,7 @@
 	<!-- Rodapé -->
 	<div class="rodape">
 		<div class="direitos">
-			<img src="<?php echo BASE_URL; ?>assets/imgs/favicon-removebg-preview.png"><p>PROCURE AKI | @2021 - TODOS OS DIREITOS RESERVADOS</p>
+			<img src="<?php echo BASE_URL; ?>assets/imgs/icone.png"><p>PROCURE AKI | @2021 - TODOS OS DIREITOS RESERVADOS</p>
 		</div>
 		<a href="#topo">
 			<div class="voltar-topo">

@@ -680,7 +680,7 @@ body {
 .navegacao {
 	margin-top: 90px;
 	display: flex;
-	background-color: #070707;
+	background-color: #F7DC5F;
 	padding-left: 90px;
 	padding-right: 90px;
 	padding-top: 20px;
@@ -689,7 +689,7 @@ body {
 	align-items: center;
 }
 .navegacao a:hover {
-	color: #F7DC5F;
+	text-decoration: none;
 }
 .navegacao-social {
 	width: 50%;
@@ -698,7 +698,7 @@ body {
 	justify-content: flex-start;
 }
 .navegacao-social a {
-	color: white;
+	color: #070707;
 	font-family: 'Questrial', sans-serif;
 	font-size: 16px;
 }
@@ -714,7 +714,7 @@ body {
 	justify-content: flex-end;
 }
 .navegacao-menu a {
-	color: white;
+	color: #070707;
 	font-family: 'Questrial', sans-serif;
 	font-size: 16px;
 	margin-left: 20px;
@@ -723,7 +723,7 @@ body {
 /* Rodapé */
 .rodape {
 	display: flex;
-	background-color: #DCDCDC;
+	background-color: #070707;
 	padding-left: 90px;
 	padding-right: 90px;
 	justify-content: space-between;
@@ -744,13 +744,13 @@ body {
 .direitos p {
 	font-family: 'Questrial', sans-serif;
 	font-size: 16px;
-	color: #070707;
+	color: white;
 	margin-left: 0;
 }
 .voltar-topo {
 	width: 60px;
 	height: 60px;
-	background-color: #070707;
+	background-color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
