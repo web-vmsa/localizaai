@@ -150,6 +150,39 @@ $(document).ready(function(){
 
 		$("#fundo_escuro_leia_mais").show();
 
+		var email_empresa = $(this).data("email");
+
+		$.ajax({
+			url:raiz+'ajax/dados',
+			type:'POST',
+			data:{email_empresa:email_empresa},
+			dataType:'json',
+			success:function(resultado){
+
+				// Modifica textos e links
+				$(".dados-empresa-left p").html(resultado.nome+' - '+resultado.tipo_servico);
+				$(".modo-entrega").html(resultado.tipo_retirada);
+				$(".info-localizacao a").html(resultado.bairro+', '+resultado.cidade+', '+resultado.estado);
+				$(".info-telefone a").html(resultado.telefone);
+				$(".info-email a").html(resultado.email);
+				$(".website a").html(resultado.site);
+
+				// Modifica apenas os links
+				$(".info-localizacao a").attr('href', 'https://www.google.com/maps?q='+resultado.bairro+', '+resultado.cidade+', '+resultado.estado);
+				$(".info-telefone a").attr('href', 'https://api.whatsapp.com/send?phone='+resultado.telefone);
+				$(".info-email a").attr('href', 'mailto:'+resultado.email);
+				$('.website a').attr('href', resultado.site);
+
+				$("#website-empresa").attr('href', resultado.site);
+				$("#facebook-empresa").attr('href', resultado.facebook);
+				$("#instagram-empresa").attr('href', instagram.facebook);
+				$("#whatsapp-empresa").attr('href', 'https://api.whatsapp.com/send?phone='+resultado.telefone);
+
+				$(".foto-empresa img").attr('src', resultado.foto);
+
+			}
+		});
+
 	});
 
 	// Fechar modal da empresa

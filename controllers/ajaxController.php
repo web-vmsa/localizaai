@@ -85,4 +85,13 @@ class ajaxController extends controller {
 		$this->loadView('ajax', $dados);
 
 	}
+
+	// Abre a view para pegar os dados da empresa
+	public function dados(){
+
+		$dados = array();
+
+		$this->loadView('dados', $dados);
+
+	}
 }

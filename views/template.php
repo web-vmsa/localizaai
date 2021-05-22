@@ -56,30 +56,30 @@
 					<p>DULCE SABOR - Informática</p>
 				</div>
 				<div class="dados-empresa-right">
-					<a href=""><div class="rede-social-empresa"><img src="https://www.freepnglogos.com/uploads/logo-website-png/logo-website-website-icon-with-png-and-vector-format-for-unlimited-22.png"></div></a>
-					<a href=""><div class="rede-social-empresa"><img src="https://www.facebook.com/images/fb_icon_325x325.png"></div></a>
-					<a href=""><div class="rede-social-empresa"><img src="https://www.instagram.com/static/images/ico/favicon-200.png/ab6eff595bb1.png"></div></a>
-					<a href=""><div class="rede-social-empresa"><img src="https://lopescastelo.adv.br/wp-content/uploads/2019/10/WhatsApp.png"></div></a>
+					<a id="website-empresa" href=""><div class="rede-social-empresa"><img src="https://www.freepnglogos.com/uploads/logo-website-png/logo-website-website-icon-with-png-and-vector-format-for-unlimited-22.png"></div></a>
+					<a id="facebook-empresa" href=""><div class="rede-social-empresa"><img src="https://www.facebook.com/images/fb_icon_325x325.png"></div></a>
+					<a id="instagram-empresa" href=""><div class="rede-social-empresa"><img src="https://www.instagram.com/static/images/ico/favicon-200.png/ab6eff595bb1.png"></div></a>
+					<a id="whatsapp-empresa" href=""><div class="rede-social-empresa"><img src="https://lopescastelo.adv.br/wp-content/uploads/2019/10/WhatsApp.png"></div></a>
 				</div>
 			</div>
 
 			<div class="div-info">
 				<img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-location-2.svg">
-				<div class="info">
+				<div class="info info-localizacao">
 					<p>LOCALIZAÇÃO</p>
 					<a href="">Rua Dr. Severino, Centro, Manaus</a>
 				</div>
 			</div>
 			<div class="div-info">
 				<img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-phone-2.svg">
-				<div class="info">
+				<div class="info info-telefone">
 					<p>TELEFONE</p>
 					<a href="">(92) 99419-3639</a>
 				</div>
 			</div>
 			<div class="div-info">
 				<img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-email-2.svg">
-				<div class="info">
+				<div class="info info-email">
 					<p>E-MAIL</p>
 					<a href="">suporte@empresa.com.br</a>
 				</div>
@@ -210,9 +210,9 @@
 	<!-- Navegação -->
 	<div class="navegacao">
 		<div class="navegacao-social">
-			<a href=""><img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-whatsapp-2"></a>
+			<a href="https://api.whatsapp.com/send?phone=92994193639"><img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-whatsapp-2"></a>
 			<a href="https://instagram.com/web_vmsa"><img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-instagram-12"></a>
-			<a href="">suporte@procureaki.com</a>
+			<a href="mailto:suporte@procureaki.com">suporte@procureaki.com</a>
 		</div>
 		<div class="navegacao-menu">
 			<a href="mailto:suporte@procureaki.com">Suporte</a>

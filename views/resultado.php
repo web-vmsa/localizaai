@@ -58,10 +58,9 @@
 			$status = 2;
 
 			$resultado = new Empresas();
-			$resultado->nome = $nome_empresa;
 			$resultado->servico = $servico_oferecido;
 			$resultado->status = $status;
-			$recentes = $resultado->find();
+			$recentes = $resultado->find($nome_empresa);
 
 			foreach($recentes as $dados):
 

@@ -149,16 +149,37 @@ class Empresas extends model {
 	* @param $status tinyint é o status da empresa
 	* @return true or false
 	*/
-	public function find(){
+	public function find($nome){
 
-		$sql = "SELECT * FROM empresas WHERE nome = :nome AND tipo_servico = :servico AND status = :status LIMIT 13";
+		$sql = "SELECT * FROM empresas WHERE nome LIKE '%$nome%' AND tipo_servico = :servico AND status = :status LIMIT 13";
 		$sql = $this->db->prepare($sql);
-		$sql->bindValue(':nome', $this->nome);
 		$sql->bindValue(':servico', $this->servico);
 		$sql->bindValue(':status', $this->status);
 		$sql->execute();
 		if ($sql->rowCount() > 0) {
 			return $sql->fetchAll();
+		} else {
+			return false;
+		}
+
+	}
+
+	/*
+	* Função de pegar a empresa seleciona
+	*
+	* Esta função vai pegar os dados da empresa quando o usuário clicar no modal
+	*
+	* @param $email varchar é o email da empresa
+	* @return true or false
+	*/
+	public function get(){
+
+		$sql = "SELECT * FROM empresas WHERE email = :email";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':email', $this->email);
+		$sql->execute();
+		if ($sql->rowCount() > 0) {
+			return $sql->fetch();
 		} else {
 			return false;
 		}
