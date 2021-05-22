@@ -48,10 +48,21 @@
 
 		<!-- Resultados -->
 		<div class="linha">
-			<p>Empresas cadastradas recentemente</p>
+			<p>Resultados da pesquisa</p>
 		</div>
 
 		<?php 
+
+			$nome_empresa = htmlspecialchars($_GET['nome_empresa']);
+			$servico_oferecido = htmlspecialchars($_GET['servico_oferecido']);
+			$status = 2;
+
+			$resultado = new Empresas();
+			$resultado->nome = $nome_empresa;
+			$resultado->servico = $servico_oferecido;
+			$resultado->status = $status;
+			$recentes = $resultado->find();
+
 			foreach($recentes as $dados):
 
 			$endereco = new Empresas();

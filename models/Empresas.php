@@ -139,4 +139,30 @@ class Empresas extends model {
 	    return $xml;
 	}
 
+	/*
+	* Função de pegar as empresas com base nos dados da pesquisa
+	*
+	* Esta função vai resgatar todas as empresas que correspondem um pouco a pesquisa do usuário
+	*
+	* @param $nome varchar é o nome da empresa
+	* @param $servico varchar é o tipo de serviço da empresa
+	* @param $status tinyint é o status da empresa
+	* @return true or false
+	*/
+	public function find(){
+
+		$sql = "SELECT * FROM empresas WHERE nome = :nome AND tipo_servico = :servico AND status = :status LIMIT 13";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':nome', $this->nome);
+		$sql->bindValue(':servico', $this->servico);
+		$sql->bindValue(':status', $this->status);
+		$sql->execute();
+		if ($sql->rowCount() > 0) {
+			return $sql->fetchAll();
+		} else {
+			return false;
+		}
+
+	}
+
 }
