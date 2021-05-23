@@ -192,4 +192,13 @@ $(document).ready(function(){
 
 	});
 
+	// Passa próxima página na home
+	$("#mais-empresas").on("click", function(){
+
+		var proxima = $(this).data("next");
+
+		window.location.href=raiz+"home/pagina/"+proxima+"#resultados";
+
+	});
+
 });

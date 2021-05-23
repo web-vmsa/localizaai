@@ -47,7 +47,7 @@
 		</form>
 
 		<!-- Resultados -->
-		<div class="linha">
+		<div id="resultados" class="linha">
 			<p>Empresas cadastradas recentemente</p>
 		</div>
 
@@ -93,6 +93,7 @@
 		<?php endforeach; ?>
 
 		<!-- Carregar mais -->
-		<button class="carregar-mais">Carregar mais resultados</button>
-
+		<?php if($max < $resultado): ?>
+		<button data-next="<?php echo $p+1; ?>" id="mais-empresas" class="carregar-mais">Carregar mais</button>
+		<?php endif; ?>
 	</div>

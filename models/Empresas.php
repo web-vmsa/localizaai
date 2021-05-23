@@ -26,6 +26,8 @@ class Empresas extends model {
 	public $site;
 	public $chave;
 	public $status;
+	public $init;
+	public $max;
 
 	/*
 	* Função de verificar se e-mail já está registrado
@@ -110,9 +112,11 @@ class Empresas extends model {
 	*/
 	public function getAll(){
 
-		$sql = "SELECT * FROM empresas WHERE status = :status ORDER BY id DESC LIMIT 13";
+		$sql = "SELECT * FROM empresas WHERE status = :status ORDER BY id DESC LIMIT :init,:max";
 		$sql = $this->db->prepare($sql);
 		$sql->bindValue(':status', $this->status);
+		$sql->bindValue(':init', $this->init, PDO::PARAM_INT);
+		$sql->bindValue(':max', $this->max, PDO::PARAM_INT);
 		$sql->execute();
 		if ($sql->rowCount() > 0) {
 			return $sql->fetchAll();
@@ -180,6 +184,28 @@ class Empresas extends model {
 		$sql->execute();
 		if ($sql->rowCount() > 0) {
 			return $sql->fetch();
+		} else {
+			return false;
+		}
+
+	}
+
+	/*
+	* Função de contar as empresas registradas
+	*
+	* Esta função vai contar quantas empresas estão cadastradas com status 2
+	*
+	* @param $status tinyint é o status das empresas, deve estar setado em 2
+	* @return true or false
+	*/
+	public function All(){
+
+		$sql = "SELECT * FROM empresas WHERE status = :status ORDER BY id DESC";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':status', $this->status);
+		$sql->execute();
+		if ($sql->rowCount() > 0) {
+			return $sql->fetchAll();
 		} else {
 			return false;
 		}

@@ -94,4 +94,5 @@ class ajaxController extends controller {
 		$this->loadView('dados', $dados);
 
 	}
+
 }
