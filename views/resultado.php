@@ -7,7 +7,7 @@
 		</div>
 
 		<!-- Formulário de pesquisa -->
-		<form name="form_pesquisa" class="formulario-de-pesquisa" method="GET" action="<?php echo BASE_URL; ?>home/resultado#caixa_pesquisa" autocomplete="off">
+		<form name="form_pesquisa" class="formulario-de-pesquisa" method="GET" action="<?php echo BASE_URL; ?>home/resultado#resultados" autocomplete="off">
 			<input id="nome_empresa" type="text" name="nome_empresa" placeholder="Nome da empresa">
 
 			<div class="selects">
@@ -47,26 +47,30 @@
 		</form>
 
 		<!-- Resultados -->
-		<div class="linha">
+		<div id="resultados" class="linha">
 			<p>Resultados da pesquisa</p>
 		</div>
 
 		<?php 
-
+			// Pega os dados por GET
 			$nome_empresa = htmlspecialchars($_GET['nome_empresa']);
 			$servico_oferecido = htmlspecialchars($_GET['servico_oferecido']);
 			$status = 2;
 
+			// Busca os resultados na base de dados
 			$resultado = new Empresas();
 			$resultado->servico = $servico_oferecido;
 			$resultado->status = $status;
 			$recentes = $resultado->find($nome_empresa);
 
-			foreach($recentes as $dados):
+			// Exibe e dá o loop caso exista resultados
+			if($recentes == true):
+				foreach($recentes as $dados):
 
-			$endereco = new Empresas();
-			$endereco->cep = $dados['cep'];
-			$endereco = $endereco->getCep();
+				// Pega o cep da empresa
+				$endereco = new Empresas();
+				$endereco->cep = $dados['cep'];
+				$endereco = $endereco->getCep();
 		?>
 
 		<!-- Resultado -->
@@ -101,6 +105,15 @@
 		</div>
 
 		<?php endforeach; ?>
+
+		<?php else: // Caso Não exista resultados exibe erro ?> 
+
+		<!-- Nenhum resultado -->
+		<div class="sem-resultados">
+			<h2>Nenhum resultado com base na busca</h2>
+		</div>
+
+		<?php endif; ?>
 
 		<!-- Carregar mais -->
 		<button class="carregar-mais">Carregar mais resultados</button>

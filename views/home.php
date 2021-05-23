@@ -7,7 +7,7 @@
 		</div>
 
 		<!-- Formulário de pesquisa -->
-		<form name="form_pesquisa" class="formulario-de-pesquisa" method="GET" action="<?php echo BASE_URL; ?>home/resultado#caixa_pesquisa" autocomplete="off">
+		<form name="form_pesquisa" class="formulario-de-pesquisa" method="GET" action="<?php echo BASE_URL; ?>home/resultado#resultados" autocomplete="off">
 			<input id="nome_empresa" type="text" name="nome_empresa" placeholder="Nome da empresa">
 
 			<div class="selects">

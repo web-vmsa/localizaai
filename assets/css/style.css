@@ -56,7 +56,7 @@ body {
 	justify-content: flex-end;
 }
 .modo-entrega {
-	width: 170px;
+	width: 185px;
 	height: 30px;
 	background-color: #00B2FE;
 	display: flex;
@@ -657,6 +657,23 @@ body {
 	font-size: 16px;
 	color: #070707;
 	margin-left: 0;
+}
+
+/* Nenhum resultado */
+.sem-resultados {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: 45px;
+}
+.sem-resultados h2 {
+	font-size: 22px;
+	color: #070707;
+	margin: 0;
+	padding: 0;
+	font-family: 'Questrial', sans-serif;
+	font-weight: 400;
 }
 
 /* Carregar mais resultados */
