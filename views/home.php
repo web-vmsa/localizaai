@@ -41,6 +41,8 @@
 
 				<input type="text" name="estado" placeholder="Estado">
 
+				<input type="text" name="page" style="display: none;" value="1">
+
 			</div>
 
 			<button type="submit" onclick="return validar()">Pesquisar</button>
@@ -92,8 +94,8 @@
 
 		<?php endforeach; ?>
 
-		<!-- Carregar mais -->
 		<?php if($max < $resultado): ?>
+		<!-- Carregar mais -->
 		<button data-next="<?php echo $p+1; ?>" id="mais-empresas" class="carregar-mais">Carregar mais</button>
 		<?php endif; ?>
 	</div>

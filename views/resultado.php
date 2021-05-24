@@ -41,6 +41,8 @@
 
 				<input type="text" name="estado" placeholder="Estado">
 
+				<input type="text" name="page" style="display: none;" value="1">
+
 			</div>
 
 			<button type="submit" onclick="return validar()">Pesquisar</button>
@@ -55,12 +57,22 @@
 			// Pega os dados por GET
 			$nome_empresa = htmlspecialchars($_GET['nome_empresa']);
 			$servico_oferecido = htmlspecialchars($_GET['servico_oferecido']);
+			$bairro = htmlspecialchars($_GET['bairro']);
+			$cidade = htmlspecialchars($_GET['cidade']);
+			$estado = htmlspecialchars($_GET['estado']);
+
 			$status = 2;
+			$pagina = htmlspecialchars($_GET['page']); // Pega a página atual
+
+			$init = 0; // Início da contagem
+			$max = $pagina*10; // Máximo de resultados
 
 			// Busca os resultados na base de dados
 			$resultado = new Empresas();
 			$resultado->servico = $servico_oferecido;
 			$resultado->status = $status;
+			$resultado->init = $init;
+			$resultado->max = $max;
 			$recentes = $resultado->find($nome_empresa);
 
 			// Exibe e dá o loop caso exista resultados
@@ -115,7 +127,24 @@
 
 		<?php endif; ?>
 
+
+		<?php
+			// Função que vai contar todos os resultados possíveis
+			$resultado = new Empresas();
+			$resultado->servico = $servico_oferecido;
+			$resultado->status = $status;
+			$recentes = $resultado->countResults($nome_empresa);
+
+			if($recentes == true): // Se houver resultados mostra a barra de carregar mais
+				$resultado = count($recentes); // Conta os resultados
+		?>
+
+
+		<?php if($max < $resultado): ?>
 		<!-- Carregar mais -->
-		<button class="carregar-mais">Carregar mais resultados</button>
+		<button data-next="<?php echo BASE_URL; ?>home/resultado?nome_empresa=<?php echo $nome_empresa; ?>&servico_oferecido=<?php echo $servico_oferecido; ?>&bairro=<?php echo $bairro; ?>&cidade=<?php echo $cidade; ?>&estado=<?php echo $estado; ?>&page=<?php echo $pagina+1; ?>#resultados" class="carregar-mais" id="mais-resultados">Carregar mais resultados</button>
+		<?php endif; ?>
+
+		<?php endif; ?>
 
 	</div>

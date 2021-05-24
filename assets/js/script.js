@@ -195,9 +195,18 @@ $(document).ready(function(){
 	// Passa próxima página na home
 	$("#mais-empresas").on("click", function(){
 
-		var proxima = $(this).data("next");
+		let proxima = $(this).data("next");
 
 		window.location.href=raiz+"home/pagina/"+proxima+"#resultados";
+
+	});
+
+	// Passa próxima página em resultados
+	$("#mais-resultados").on("click", function(){
+
+		let proxima = $(this).data("next");
+
+		window.location.href=proxima;
 
 	});
 

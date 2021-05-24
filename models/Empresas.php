@@ -108,6 +108,8 @@ class Empresas extends model {
 	* Esta função vai apenas pegar todas as empresas cadastradas recentemente na base de dados
 	*
 	* @param $status tinyint é o status das empresas, deve estar setado em 2
+	* @param $init int é de onde ele começa a contar
+	* @param $max int é até onde ele vai pegar
 	* @return true or false
 	*/
 	public function getAll(){
@@ -151,14 +153,18 @@ class Empresas extends model {
 	* @param $nome varchar é o nome da empresa
 	* @param $servico varchar é o tipo de serviço da empresa
 	* @param $status tinyint é o status da empresa
+	* @param $init int é de onde ele começa a contar
+	* @param $max int é até onde ele vai pegar
 	* @return true or false
 	*/
 	public function find($nome){
 
-		$sql = "SELECT * FROM empresas WHERE nome LIKE '%$nome%' AND tipo_servico = :servico AND status = :status LIMIT 13";
+		$sql = "SELECT * FROM empresas WHERE nome LIKE '%$nome%' AND tipo_servico = :servico AND status = :status LIMIT :init,:max";
 		$sql = $this->db->prepare($sql);
 		$sql->bindValue(':servico', $this->servico);
 		$sql->bindValue(':status', $this->status);
+		$sql->bindValue(':init', $this->init, PDO::PARAM_INT);
+		$sql->bindValue(':max', $this->max, PDO::PARAM_INT);
 		$sql->execute();
 		if ($sql->rowCount() > 0) {
 			return $sql->fetchAll();
@@ -202,6 +208,31 @@ class Empresas extends model {
 
 		$sql = "SELECT * FROM empresas WHERE status = :status ORDER BY id DESC";
 		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':status', $this->status);
+		$sql->execute();
+		if ($sql->rowCount() > 0) {
+			return $sql->fetchAll();
+		} else {
+			return false;
+		}
+
+	}
+
+	/*
+	* Função de contar os resultados 
+	*
+	* Esta função vai contar quantas empresas foram encontradas com base na busca do usuário
+	*
+	* @param $nome varchar é o nome da empresa
+	* @param $servico varchar é o tipo de serviço da empresa
+	* @param $status tinyint é o status da empresa
+	* @return true or false
+	*/
+	public function countResults($nome){
+
+		$sql = "SELECT * FROM empresas WHERE nome LIKE '%$nome%' AND tipo_servico = :servico AND status = :status";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':servico', $this->servico);
 		$sql->bindValue(':status', $this->status);
 		$sql->execute();
 		if ($sql->rowCount() > 0) {
