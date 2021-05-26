@@ -243,4 +243,36 @@ class Empresas extends model {
 
 	}
 
+	/*
+	* Função de filtrar um resultado específico
+	*
+	* Esta função vai resgatar a empresa da base de dados de acordo com todos os dados passados
+	* na pesquisa
+	*
+	* @param $nome varchar é o nome da empresa
+	* @param $servico varchar é o tipo de serviço da empresa
+	* @param $bairro varchar é o bairro da empresa
+	* @param $cidade varchar é a cidade da empresa
+	* @param $estad0 varchar é o estado da empresa
+	* @param $status tinyint é o status da empresa
+	* @return true or false
+	*/
+	public function filter($nome){
+
+		$sql = "SELECT * FROM empresas WHERE nome LIKE '%$nome%' AND tipo_servico = :servico AND bairro = :bairro AND cidade = :cidade AND estado = :estado AND status = :status";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':servico', $this->servico);
+		$sql->bindValue(':bairro', $this->bairro);
+		$sql->bindValue(':cidade', $this->cidade);
+		$sql->bindValue(':estado', $this->estado);
+		$sql->bindValue(':status', $this->status);
+		$sql->execute();
+		if ($sql->rowCount() > 0) {
+			return $sql->fetch();
+		} else {
+			return false;
+		}
+
+	}
+
 }
