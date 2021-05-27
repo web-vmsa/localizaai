@@ -25,6 +25,9 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/style.css">
 
+	<!-- CSS: Video js -->
+	<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+
 	<!-- Favicon -->
 	<link rel="icon" href="<?php echo BASE_URL; ?>assets/imgs/favicon.png" type="image/x-icon" />
 
@@ -197,7 +200,9 @@
 			</div>
 
 			<div class="imagem">
-				<iframe src="https://www.youtube.com/embed/s4crWWSC-aU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<video id="my-video" class="video-js" controls poster="<?php echo BASE_URL; ?>assets/imgs/Como fazer o cadastro (Procure Aki).png" preload="auto" data-setup="{}">
+					<source src="<?php echo BASE_URL; ?>assets/videos/Como fazer o cadastro.mp4" type="video/mp4">
+				</video>
 			</div>
 
 		</div>
@@ -231,6 +236,9 @@
 			</div>
 		</a>
 	</div>
+
+	<!-- Vídeo js script -->
+	<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
 
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
