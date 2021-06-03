@@ -13,13 +13,19 @@
 	$array['tipo_retirada'] = $dados['tipo_retirada'];
 	$array['telefone'] = $dados['telefone'];
 	$array['email'] = $dados['email'];
-	$array['bairro'] = $dados['bairro'];
-	$array['cidade'] = $dados['cidade'];
-	$array['estado'] = $dados['estado'];
 	$array['whatsapp'] = $dados['whatsapp'];
 	$array['facebook'] = $dados['facebook'];
 	$array['instagram'] = $dados['instagram'];
 	$array['site'] = $dados['site'];
+
+	// Pega a localização pelo CEP
+	$endereco = new Empresas();
+	$endereco->cep = $dados['cep'];
+	$endereco = $endereco->getCep();
+
+	$array['rua'] = $endereco->logradouro;
+	$array['bairro'] = $endereco->bairro;
+	$array['cidade'] = $endereco->localidade;
 
 	// Manda esses dados para o ajax
 	echo json_encode($array);

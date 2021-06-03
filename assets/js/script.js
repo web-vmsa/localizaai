@@ -162,13 +162,13 @@ $(document).ready(function(){
 				// Modifica textos e links
 				$(".dados-empresa-left p").html(resultado.nome+' - '+resultado.tipo_servico);
 				$(".modo-entrega").html(resultado.tipo_retirada);
-				$(".info-localizacao a").html(resultado.bairro+', '+resultado.cidade+', '+resultado.estado);
+				$(".info-localizacao a").html(resultado.rua[0]+', '+resultado.bairro[0]+', '+resultado.cidade[0]);
 				$(".info-telefone a").html(resultado.telefone);
 				$(".info-email a").html(resultado.email);
 				$(".website a").html(resultado.site);
 
 				// Modifica apenas os links
-				$(".info-localizacao a").attr('href', 'https://www.google.com/maps?q='+resultado.bairro+', '+resultado.cidade+', '+resultado.estado);
+				$(".info-localizacao a").attr('href', 'https://www.google.com/maps?q='+resultado.rua[0]+', '+resultado.bairro[0]+', '+resultado.cidade[0]);
 				$(".info-telefone a").attr('href', 'https://api.whatsapp.com/send?phone='+resultado.telefone);
 				$(".info-email a").attr('href', 'mailto:'+resultado.email);
 				$('.website a').attr('href', resultado.site);
