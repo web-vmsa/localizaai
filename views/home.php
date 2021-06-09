@@ -7,7 +7,7 @@
 		</div>
 
 		<!-- Formulário de pesquisa -->
-		<form name="form_pesquisa" class="formulario-de-pesquisa" method="GET" action="<?php echo BASE_URL; ?>home/resultado#resultados" autocomplete="off">
+		<form name="form_pesquisa" class="formulario-de-pesquisa" method="POST" action="<?php echo BASE_URL; ?>home/resultado#caixa_pesquisa">
 			<input id="nome_empresa" type="text" name="nome_empresa" placeholder="Nome da empresa">
 
 			<div class="selects">
@@ -41,27 +41,27 @@
 
 				<input type="text" name="estado" placeholder="Estado">
 
-				<input type="text" name="page" style="display: none;" value="1">
-
 			</div>
 
-			<button type="submit" onclick="return validar()">Pesquisar</button>
+			<button type="submit" id="enviar">Pesquisar</button>
 		</form>
 
 		<!-- Resultados -->
-		<div id="resultados" class="linha">
+		<div class="linha">
 			<p>Empresas cadastradas recentemente</p>
 		</div>
 
-		<?php 
-			foreach($recentes as $dados):
+		<!-- Resultados -->
 
-			$endereco = new Empresas();
-			$endereco->cep = $dados['cep'];
-			$endereco = $endereco->getCep();
+		<?php
+			if($empresasRecentes == true):
+				foreach($empresasRecentes as $dados):
+
+				$dadosCep = new Empresas();
+				$dadosCep->cep = $dados['cep'];
+				$resultadoCep = $dadosCep->getCep();
 		?>
 
-		<!-- Resultado -->
 		<div class="resultado">
 			<div class="div-menor">
 				<img src="<?php echo BASE_URL; ?>users/imgs/<?php echo $dados['foto']; ?>">
@@ -71,7 +71,7 @@
 
 				<div class="contato">
 					<img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-location-2.svg">
-					<a href="https://www.google.com/maps?q=<?php echo $endereco->logradouro; ?>, <?php echo $endereco->bairro; ?>, <?php echo $endereco->localidade; ?>"><?php echo $endereco->logradouro; ?>, <?php echo $endereco->bairro; ?>, <?php echo $endereco->localidade; ?></a>
+					<a href="https://www.google.com/maps?q=<?php echo $resultadoCep->logradouro; ?>, <?php echo $resultadoCep->bairro; ?>, <?php echo $resultadoCep->localidade; ?>"><?php echo $resultadoCep->logradouro; ?>, <?php echo $resultadoCep->bairro; ?>, <?php echo $resultadoCep->localidade; ?></a>
 				</div>
 				<div class="contato link-escuro">
 					<img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-phone-2.svg">
@@ -92,10 +92,16 @@
 			</div>
 		</div>
 
-		<?php endforeach; ?>
+		<?php endforeach; else: ?>
 
-		<?php if($max < $resultado): ?>
-		<!-- Carregar mais -->
-		<button data-next="<?php echo $p+1; ?>" id="mais-empresas" class="carregar-mais">Carregar mais</button>
+		<!-- Nenhum resultado -->
+		<div class="sem-resultados">
+			<h2>Nenhuma empresa foi cadastrada ainda</h2>
+		</div>
+
 		<?php endif; ?>
+		
+		<!-- Carregar mais 
+		<button class="carregar-mais" id="carregar-mais">Carregar mais</button>
+		-->
 	</div>

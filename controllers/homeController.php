@@ -1,70 +1,84 @@
 <?php 
 class homeController extends controller {
 
-	// Página inicial
 	public function index(){
-		
-		$p = 1; // Número página
 
-		$init = 0; // Início da contagem
-		$max = $p*10; // Máximo de resultados
-
-		$recentes = new Empresas();
-		$recentes->status = 2;
-		$recentes->init = $init;
-		$recentes->max = $max;
-
-		$all = new Empresas();
-		$all->status = 2;
-		$total = $all->All();
-
-		$resultado = count($total); // Conta todas as empresas com status = 2
+		// Pega as empresas recentemente cadastradas
+		$empresasRecentes = new Empresas();
+		$empresasRecentes->init = 0;
+		$empresasRecentes->max = 10;
+		$empresasRecentes->status = 2;
 
 		$dados = array(
-			'recentes' => $recentes->getAll(),
-			'p' => $p,
-			'resultado' => $resultado,
-			'max' => $max
+			'empresasRecentes' => $empresasRecentes->getAll()
 		);
 
 		$this->loadTemplate('home', $dados);
 
 	}
 
-	// Resultados da pesquisa
 	public function resultado(){
 
+		// Exibe os resultados encontrados
 		$dados = array();
 
+		// Apenas pelo nome e tipo de serviço
+		if (!empty($_POST['nome_empresa']) && !empty($_POST['servico_oferecido'])) {
+			
+			$nome = htmlspecialchars($_POST['nome_empresa']);
+			$servico = htmlspecialchars($_POST['servico_oferecido']);
+			$status = 2;
+
+			$empresasResultados = new Empresas();
+			$empresasResultados->servico = $servico;
+			$empresasResultados->status = $status;
+
+			$dados = array(
+				'resultados' => $empresasResultados->findByNome($nome)
+			);
+
+		} elseif(!empty($_POST['servico_oferecido']) && !empty($_POST['bairro']) && !empty($_POST['cidade']) && !empty($_POST['estado'])) { // Por todos os dados exceto o nome
+
+			$servico = htmlspecialchars($_POST['servico_oferecido']);
+			$bairro = htmlspecialchars($_POST['bairro']);
+			$cidade = htmlspecialchars($_POST['cidade']);
+			$estado = htmlspecialchars($_POST['estado']);
+			$status = 2;
+
+			$empresasResultados = new Empresas();
+			$empresasResultados->servico = $servico;
+			$empresasResultados->bairro = $bairro;
+			$empresasResultados->cidade = $cidade;
+			$empresasResultados->estado = $estado;
+			$empresasResultados->status = $status;
+
+			$dados = array(
+				'resultados' => $empresasResultados->findByLocation()
+			);
+
+		} elseif(!empty($_POST['nome_empresa']) && !empty($_POST['servico_oferecido']) && !empty($_POST['bairro']) && !empty($_POST['cidade']) && !empty($_POST['estado'])) { // Busca completa por um resultado
+
+			$nome = htmlspecialchars($_POST['nome_empresa']);
+			$servico = htmlspecialchars($_POST['servico_oferecido']);
+			$bairro = htmlspecialchars($_POST['bairro']);
+			$cidade = htmlspecialchars($_POST['cidade']);
+			$estado = htmlspecialchars($_POST['estado']);
+			$status = 2;
+
+			$empresasResultados = new Empresas();
+			$empresasResultados->servico = $servico;
+			$empresasResultados->bairro = $bairro;
+			$empresasResultados->cidade = $cidade;
+			$empresasResultados->estado = $estado;
+			$empresasResultados->status = $status;
+
+			$dados = array(
+				'resultados' => $empresasResultados->find($nome)
+			);
+
+		}
+
 		$this->loadTemplate('resultado', $dados);
-
-	}
-
-	// Carrega mais empresas na home
-	public function pagina($p){
-		
-		$init = 0; // Valor inicial
-		$max = $p*10; // Máximo de resultados
-
-		$recentes = new Empresas();
-		$recentes->status = 2;
-		$recentes->init = $init;
-		$recentes->max = $max;
-
-		$all = new Empresas();
-		$all->status = 2;
-		$total = $all->All(); 
-
-		$resultado = count($total); // Conta o total de empresas com status = 2
-
-		$dados = array(
-			'recentes' => $recentes->getAll(),
-			'p' => $p,
-			'resultado' => $resultado,
-			'max' => $max
-		);
-
-		$this->loadTemplate('home', $dados);
 
 	}
 	

@@ -1,7 +1,6 @@
 <?php 
 class ajaxController extends controller {
 
-	// Função de realizar o registro da empresa
 	public function index(){
 
 
@@ -36,7 +35,7 @@ class ajaxController extends controller {
 
 			if ($check == true) { // Retorna true se já está na base de dados
 				
-				$dados['resultado'] = "Esta empresa já está registrada :(";
+				$dados['resultado'] = "* Esta empresa já está registrada.";
 
 			} else { // Realiza o registro caso não esteja na base de dados
 
@@ -86,12 +85,11 @@ class ajaxController extends controller {
 
 	}
 
-	// Abre a view para pegar os dados da empresa
-	public function dados(){
+	public function get() {
 
 		$dados = array();
 
-		$this->loadView('dados', $dados);
+		$this->loadView('get', $dados);
 
 	}
 

@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+	// Raiz do site
 	var environment = "development";
 
 	if (environment == "development") {
@@ -18,7 +19,7 @@ $(document).ready(function(){
 	// Rolagem lenta para o formulário de pesquisa
 	$('.pesquisa-menu a[href^="#"]').on('click', function(e) {
 	  e.preventDefault();
-	  var id = $(this).attr('href'),
+	  let id = $(this).attr('href'),
 	  targetOffset = $(id).offset().top;
 	    
 	  $('html, body').animate({ 
@@ -29,7 +30,7 @@ $(document).ready(function(){
 	// Rolagem lenta para o formulário de pesquisa do rodapé
 	$('.navegacao-menu a[href^="#"]').on('click', function(e) {
 	  e.preventDefault();
-	  var id = $(this).attr('href'),
+	  let id = $(this).attr('href'),
 	  targetOffset = $(id).offset().top;
 	    
 	  $('html, body').animate({ 
@@ -40,7 +41,7 @@ $(document).ready(function(){
 	// Rolagem lenta para o topo
 	$('.rodape a[href^="#"]').on('click', function(e) {
 	  e.preventDefault();
-	  var id = $(this).attr('href'),
+	  let id = $(this).attr('href'),
 	  targetOffset = $(id).offset().top;
 	    
 	  $('html, body').animate({ 
@@ -51,14 +52,70 @@ $(document).ready(function(){
 	// Abrir modal de registro
 	$("#abrir_registro").on("click", function(){
 
-		$("#fundo_escuro").show();
+		$("#fundo_escuro").fadeIn();
 
 	});
 
 	// Fechar modal de registro
 	$("#fechar_registro").on("click", function(){
 
-		$("#fundo_escuro").hide();
+		$("#fundo_escuro").fadeOut();
+
+	});
+
+	// Abrir modal da empresa
+	$(".ler-mais").on("click", function(){
+
+		let identifier = $(this).data("email");
+
+		$.ajax({
+			type:'POST',
+			url:raiz+'ajax/get',
+			data:{identifier:identifier},
+			dataType:'json',
+			success:function(json){
+				$(".foto-empresa img").attr('src', raiz+'users/imgs/'+json.result.foto);
+				$(".dados-empresa p").html(json.result.nome.toUpperCase()+" - "+json.result.tipo_servico);
+				$(".modo-entrega").html(json.result.tipo_retirada);
+				$("#website-empresa").attr('href', json.result.site);
+				$("#instagram-empresa").attr('href', json.result.instagram);
+				$("#facebook-empresa").attr('href', json.result.facebook);
+				$("#whatsapp-empresa").attr('href', 'https://api.whatsapp.com/send?phone='+json.result.whatsapp);
+				$(".info-localizacao a").html(json.rua[0]+", "+json.bairro[0]+", "+json.cidade[0]);
+				$(".info-localizacao a").attr('href', 'https://www.google.com/maps?q='+json.rua[0]+", "+json.bairro[0]+", "+json.cidade[0]);
+				$(".info-telefone a").html(json.result.telefone);
+				$(".info-telefone a").attr('href', 'https://api.whatsapp.com/send?phone='+json.result.whatsapp);
+				$(".info-email a").html(json.result.email);
+				$(".info-email a").attr('href', 'https://api.whatsapp.com/send?phone='+json.result.email);
+				$(".website a").attr('href', json.result.site);
+				if (json.result.site.includes("https")) {
+					$(".website a").html(json.result.site.substring(8));
+				} else {
+					$(".website a").html(json.result.site.substring(7));
+				}
+			}
+		});
+
+		$("#fundo_escuro_leia_mais").fadeIn();
+
+	});
+
+	// Fechar modal da empresa
+	$("#fechar_modal_empresa").on("click", function(){
+
+		$("#fundo_escuro_leia_mais").fadeOut();
+
+	});
+
+	// Verifica se a barra de pesquisa está preenchida
+	$("#enviar").on("click", function(){
+
+        let servico_oferecido = form_pesquisa.servico_oferecido.value;
+
+        if(servico_oferecido == "Serviço oferecido"){
+            document.getElementById("servico_oferecido").style.border = "2px solid #FE0000";
+            return false;
+        }
 
 	});
 
@@ -67,22 +124,22 @@ $(document).ready(function(){
 
 		e.preventDefault();
 
-		var registro_dados = new FormData();
+		let registro_dados = new FormData();
 
-		var arquivos = $('#foto_local')[0].files;
+		let arquivos = $('#foto_local')[0].files;
 
-		var nome_da_empresa = $("#nome_empresa_registro").val();
-		var cnpj = $("#cnpj").val();
-		var servico = $("#servico").val();
-		var retirada = $("#retirada").val();
-		var telefone = $("#telefone").val();
-		var email = $("#email").val();
-		var cep = $("#cep").val();
-		var bairro = $("#bairro").val();
-		var cidade = $("#cidade").val();
-		var estado = $("#estado").val();
-		var whatsapp = $("#whatsapp").val();
-		var foto_local = $("#foto_local").val();
+		let nome_da_empresa = $("#nome_empresa_registro").val();
+		let cnpj = $("#cnpj").val();
+		let servico = $("#servico").val();
+		let retirada = $("#retirada").val();
+		let telefone = $("#telefone").val();
+		let email = $("#email").val();
+		let cep = $("#cep").val();
+		let bairro = $("#bairro").val();
+		let cidade = $("#cidade").val();
+		let estado = $("#estado").val();
+		let whatsapp = $("#whatsapp").val();
+		let foto_local = $("#foto_local").val();
 
 		// Anexos
 		registro_dados.append('nome_empresa_registro', $("#nome_empresa_registro").val());
@@ -142,71 +199,6 @@ $(document).ready(function(){
 				}
 			});
 		}
-
-	});
-
-	// Abrir modal da empresa
-	$(".ler-mais").on("click", function(){
-
-		$("#fundo_escuro_leia_mais").show();
-
-		var email_empresa = $(this).data("email");
-
-		$.ajax({
-			url:raiz+'ajax/dados',
-			type:'POST',
-			data:{email_empresa:email_empresa},
-			dataType:'json',
-			success:function(resultado){
-
-				// Modifica textos e links
-				$(".dados-empresa-left p").html(resultado.nome+' - '+resultado.tipo_servico);
-				$(".modo-entrega").html(resultado.tipo_retirada);
-				$(".info-localizacao a").html(resultado.rua[0]+', '+resultado.bairro[0]+', '+resultado.cidade[0]);
-				$(".info-telefone a").html(resultado.telefone);
-				$(".info-email a").html(resultado.email);
-				$(".website a").html(resultado.site);
-
-				// Modifica apenas os links
-				$(".info-localizacao a").attr('href', 'https://www.google.com/maps?q='+resultado.rua[0]+', '+resultado.bairro[0]+', '+resultado.cidade[0]);
-				$(".info-telefone a").attr('href', 'https://api.whatsapp.com/send?phone='+resultado.telefone);
-				$(".info-email a").attr('href', 'mailto:'+resultado.email);
-				$('.website a').attr('href', resultado.site);
-
-				$("#website-empresa").attr('href', resultado.site);
-				$("#facebook-empresa").attr('href', resultado.facebook);
-				$("#instagram-empresa").attr('href', instagram.facebook);
-				$("#whatsapp-empresa").attr('href', 'https://api.whatsapp.com/send?phone='+resultado.telefone);
-
-				$(".foto-empresa img").attr('src', resultado.foto);
-
-			}
-		});
-
-	});
-
-	// Fechar modal da empresa
-	$("#fechar_modal_empresa").on("click", function(){
-
-		$("#fundo_escuro_leia_mais").hide();
-
-	});
-
-	// Passa próxima página na home
-	$("#mais-empresas").on("click", function(){
-
-		let proxima = $(this).data("next");
-
-		window.location.href=raiz+"home/pagina/"+proxima+"#resultados";
-
-	});
-
-	// Passa próxima página em resultados
-	$("#mais-resultados").on("click", function(){
-
-		let proxima = $(this).data("next");
-
-		window.location.href=proxima;
 
 	});
 

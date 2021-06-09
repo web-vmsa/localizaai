@@ -108,7 +108,7 @@
 				<p>Preencha os campos para cadastrar sua empresa</p>
 			</div>
 
-			<form method="POST" id="form_registro" autocomplete="off" enctype="multipart/form-data">
+			<form method="POST" id="form_registro" enctype="multipart/form-data">
 				<input type="text" name="nome_da_empresa" id="nome_empresa_registro" placeholder="Nome da empresa">
 				<input type="text" name="cnpj" id="cnpj" placeholder="CNPJ">
 
@@ -245,25 +245,5 @@
 
 	<!-- Javascript -->
 	<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/script.js"></script>
-
-	<!-- Valida formulário de pesquisa -->
-	<script type="text/javascript">
-
-		function validar(){
-            var nome_empresa = form_pesquisa.nome_empresa.value;
-            var servico_oferecido = form_pesquisa.servico_oferecido.value;
-                
-            if(nome_empresa == ""){
-                document.getElementById("nome_empresa").style.border = "2px solid #FE0000";
-                return false;
-            }
-
-            if(servico_oferecido == "Serviço oferecido"){
-                document.getElementById("servico_oferecido").style.border = "2px solid #FE0000";
-                return false;
-            }
-                
-        }
-	</script>
 </body>
 </html>

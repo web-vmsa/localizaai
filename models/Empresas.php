@@ -157,14 +157,73 @@ class Empresas extends model {
 	* @param $max int é até onde ele vai pegar
 	* @return true or false
 	*/
-	public function find($nome){
+	public function findByNome($nome){
 
-		$sql = "SELECT * FROM empresas WHERE nome LIKE '%$nome%' AND tipo_servico = :servico AND status = :status LIMIT :init,:max";
+		$sql = "SELECT * FROM empresas WHERE nome LIKE '%$nome%' AND tipo_servico = :servico AND status = :status ORDER BY id";
 		$sql = $this->db->prepare($sql);
 		$sql->bindValue(':servico', $this->servico);
 		$sql->bindValue(':status', $this->status);
-		$sql->bindValue(':init', $this->init, PDO::PARAM_INT);
-		$sql->bindValue(':max', $this->max, PDO::PARAM_INT);
+		$sql->execute();
+		if ($sql->rowCount() > 0) {
+			return $sql->fetchAll();
+		} else {
+			return false;
+		}
+
+	}
+
+	/*
+	* Função de pegar as empresas com base nos dados da pesquisa
+	*
+	* Esta função vai resgatar todas as empresas que correspondem um pouco a pesquisa do usuário
+	*
+	* @param $servico varchar é o tipo de serviço da empresa
+	* @param $bairro varchar é o bairro da empresa
+	* @param $cidade varchar é a cidade da empresa
+	* @param $estado varchar é o estado da empresa
+	* @param $status tinyint é o status da empresa
+	* @return true or false
+	*/
+	public function findByLocation(){
+
+		$sql = "SELECT * FROM empresas WHERE tipo_servico = :servico AND bairro = :bairro AND cidade = :cidade AND estado = :estado AND status = :status ORDER BY id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':servico', $this->servico);
+		$sql->bindValue(':bairro', $this->bairro);
+		$sql->bindValue(':cidade', $this->cidade);
+		$sql->bindValue(':estado', $this->estado);
+		$sql->bindValue(':status', $this->status);
+		$sql->execute();
+		if ($sql->rowCount() > 0) {
+			return $sql->fetchAll();
+		} else {
+			return false;
+		}
+
+	}
+
+	/*
+	* Função de pegar as empresas com base nos dados da pesquisa
+	*
+	* Esta função vai resgatar todas as empresas que correspondem um pouco a pesquisa do usuário
+	*
+	* @param $nome varchar é o nome da empresa
+	* @param $servico varchar é o tipo de serviço da empresa
+	* @param $bairro varchar é o bairro da empresa
+	* @param $cidade varchar é a cidade da empresa
+	* @param $estado varchar é o estado da empresa
+	* @param $status tinyint é o status da empresa
+	* @return true or false
+	*/
+	public function find($nome){
+
+		$sql = "SELECT * FROM empresas WHERE nome LIKE '%$nome%' AND tipo_servico = :servico AND bairro = :bairro AND cidade = :cidade AND estado = :estado AND status = :status ORDER BY id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':servico', $this->servico);
+		$sql->bindValue(':bairro', $this->bairro);
+		$sql->bindValue(':cidade', $this->cidade);
+		$sql->bindValue(':estado', $this->estado);
+		$sql->bindValue(':status', $this->status);
 		$sql->execute();
 		if ($sql->rowCount() > 0) {
 			return $sql->fetchAll();
@@ -190,53 +249,6 @@ class Empresas extends model {
 		$sql->execute();
 		if ($sql->rowCount() > 0) {
 			return $sql->fetch();
-		} else {
-			return false;
-		}
-
-	}
-
-	/*
-	* Função de contar as empresas registradas
-	*
-	* Esta função vai contar quantas empresas estão cadastradas com status 2
-	*
-	* @param $status tinyint é o status das empresas, deve estar setado em 2
-	* @return true or false
-	*/
-	public function All(){
-
-		$sql = "SELECT * FROM empresas WHERE status = :status ORDER BY id DESC";
-		$sql = $this->db->prepare($sql);
-		$sql->bindValue(':status', $this->status);
-		$sql->execute();
-		if ($sql->rowCount() > 0) {
-			return $sql->fetchAll();
-		} else {
-			return false;
-		}
-
-	}
-
-	/*
-	* Função de contar os resultados 
-	*
-	* Esta função vai contar quantas empresas foram encontradas com base na busca do usuário
-	*
-	* @param $nome varchar é o nome da empresa
-	* @param $servico varchar é o tipo de serviço da empresa
-	* @param $status tinyint é o status da empresa
-	* @return true or false
-	*/
-	public function countResults($nome){
-
-		$sql = "SELECT * FROM empresas WHERE nome LIKE '%$nome%' AND tipo_servico = :servico AND status = :status";
-		$sql = $this->db->prepare($sql);
-		$sql->bindValue(':servico', $this->servico);
-		$sql->bindValue(':status', $this->status);
-		$sql->execute();
-		if ($sql->rowCount() > 0) {
-			return $sql->fetchAll();
 		} else {
 			return false;
 		}

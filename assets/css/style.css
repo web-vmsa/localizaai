@@ -3,6 +3,11 @@ body {
 	padding: 0;
 }
 
+/* Modelos */
+.modelos {
+	display: none;
+}
+
 /* Fundo escuro */
 .fundo-escuro-leia-mais {
 	width: 100%;
@@ -695,7 +700,7 @@ body {
 
 /* Navegação */
 .navegacao {
-	margin-top: 90px;
+	margin-top: 45px;
 	display: flex;
 	background-color: #F7DC5F;
 	padding-left: 90px;
