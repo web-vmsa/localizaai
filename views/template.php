@@ -178,7 +178,7 @@
 
 			<div class="menu">
 				<a href="mailto:suporte@procureaki.com">SUPORTE</a>
-				<a href="https://instagram.com/web_vmsa">INSTAGRAM</a>
+				<a href="https://www.instagram.com/procure__aki/">INSTAGRAM</a>
 			</div>
 
 			<div class="pesquisa-menu">
@@ -216,7 +216,7 @@
 	<div class="navegacao">
 		<div class="navegacao-social">
 			<a href="https://api.whatsapp.com/send?phone=92994193639"><img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-whatsapp-2"></a>
-			<a href="https://instagram.com/web_vmsa"><img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-instagram-12"></a>
+			<a href="https://www.instagram.com/procure__aki/"><img src="<?php echo BASE_URL; ?>assets/imgs/iconmonstr-instagram-12"></a>
 			<a href="mailto:suporte@procureaki.com">suporte@procureaki.com</a>
 		</div>
 		<div class="navegacao-menu">
